@@ -320,6 +320,9 @@ aside {
     justify-content: center;
     align-items: center;
     transition: all 0.5s ease;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
 }
 .card1{
     position: relative;
@@ -330,6 +333,8 @@ aside {
     transition: transform 0.5s ease, filter 0.5s ease, opacity 0.5s ease;
     background: #181818;
     padding: 20px;
+    width: 100%;
+    max-width: 400px;
 }
 .card1 img {
   width: 400px;
@@ -527,12 +532,12 @@ aside {
         right: 50px;
     }
     
-    /* Меню - скрыто по умолчанию */
+    /* Меню */
     .shap {
         position: fixed;
         top: 0;
         right: 0;
-        width: 50%;
+        width: 65%;
         height: 100vh;
         background: rgba(72, 77, 118, 0.9);
         flex-direction: column;
@@ -574,31 +579,30 @@ aside {
     }
 
 
-     /* Стили для ссылок меню */
+     /* стили для ссылок меню */
     .shap a {
         display: block;
         width: 100%;
         margin: 0 auto;
-        padding: 26px 40px;
+        padding: 20px 20px;
         font-size: 26px;
         font-weight: 600;
         text-decoration: none;
         color: #181818;
         background: rgba(245, 243, 243, 0.95);
         
-        /* Рамки и скругления */
-        border: 0px solid #5d0013;
+        
         border-radius: 1px;
         
-        /* Тень и переходы */
+        /* тень и переходы */
         box-shadow: 0 4px 15px rgba(93, 0, 19, 0.2);
         transition: all 0.3s ease;
         
-        /* Выравнивание текста */
+       
         text-align: center;
         line-height: 1.4;
         
-        /* Эффекты при наведении */
+        /* эффекты при наведении */
         position: relative;
         overflow: hidden;
     }
@@ -651,7 +655,22 @@ aside {
         gap: 20px;
     }
     
+     .image-container1 {
+        display: flex;
+        flex-direction: row; 
+        gap: 20px;
+        flex-wrap: wrap; /* перенос на новую строку */
+        justify-content: center;
+    }
     
+    .card1 {
+        width: 90%; 
+        max-width: 300px;
+    }
+    
+    .card1 img {
+        height: 300px; 
+    }
     
     
     logtext {
@@ -674,11 +693,11 @@ aside {
         padding: 0;
     }
     
-    /* Для изображений внутри aside в мобильной версии */
+    /* дляя изображений внутри aside в мобильной версии */
     aside img {
-        max-width: 40%; /* Ограничиваем ширину изображения */
+        max-width: 40%; /* ограничиваем ширину изображения */
         max-height: 40%;
-        height: auto; /* Сохраняем пропорции */
+        height: auto; /* сохраняем пропорции */
         
     }
 
@@ -717,237 +736,6 @@ img {
     }
 
 
-
-        /* -----------------------------------Стили для уведомлений -------------------------------------------*/
-        .notifications {
-            position: fixed;
-            bottom:20px;
-            right:20px;
-            z-index: 1000;
-            margin-bottom: 80px;
-        }
-
-        .notification-bell {
-            position: relative;
-            background: #5d0013;
-            color: white;
-            padding: 12px 16px;
-            border-radius: 100px;
-            cursor: pointer;
-            font-size: 18px;
-            transition: all 0.3s ease;
-            border: 2px solid #420410;
-        }
-
-        .notification-bell:hover {
-            background: #420410;
-            transform: scale(1.05);
-        }
-
-        /* Красный кружок с количеством уведомлений */
-        .notification-count {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: #ff0000;
-            color: white;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            font-size: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-        }
-
-        /* Выпадающий список */
-        .notification-dropdown {
-            position: absolute;
-            bottom: 100%;
-            right: 0;
-            width: 300px;
-            background: white;
-            border: 2px solid #5d0013;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(93, 0, 19, 0.3);
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            z-index: 1000;
-            margin-bottom: 10px;
-        }
-
-        /* Показываем список при наведении */
-        .notifications:hover .notification-dropdown {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        /* Заголовок списка */
-        .notification-header {
-            background: #5d0013;
-            color: white;
-            padding: 12px 16px;
-            border-radius: 6px 6px 0 0;
-            font-weight: bold;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        /* Список уведомлений */
-        .notification-list {
-            max-height: 300px;
-            overflow-y: auto;
-        }
-
-        /* Элемент уведомления */
-        .notification-item {
-            position: relative;
-            padding: 12px 16px;
-            border-bottom: 1px solid #e0e0e0;
-            color: #181818;
-            transition: background 0.2s ease;
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-        }
-        /* кнопка закрытия */
-        .notification-close {
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            width: 20px;
-            height: 20px;
-            background: #ff0000;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.2s ease, transform 0.2s ease;
-            transform: scale(0.8);
-        }
-        .notification-item:hover .notification-close {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .notification-close:hover {
-            background: #ff0000;
-            transform: scale(0.6);
-        }
-        .notification-item:hover {
-            background: #f8f8f8;
-        }
-
-        .notification-item:last-child {
-            border-bottom: none;
-        }
-
-        /* Иконка уведомления */
-        .notification-icon {
-            width: 8px;
-            height: 8px;
-            background: #5d0013;
-            border-radius: 50px;
-            margin-top: 6px;
-            flex-shrink: 0;
-        }
-
-        /* Содержимое уведомления */
-        .notification-content {
-            flex: 1;
-            padding-right: 25px;
-        }
-
-        .notification-title {
-            font-weight: bold;
-            margin-bottom: 4px;
-            color: #5d0013;
-        }
-
-        .notification-message {
-            font-size: 14px;
-            color: #666;
-            line-height: 1.4;
-        }
-
-        .notification-time {
-            font-size: 12px;
-            color: #999;
-            margin-top: 4px;
-        }
-
-        
-
-        /* Пустой список */
-        .notification-empty {
-            padding: 20px;
-            text-align: center;
-            color: #999;
-        }
-
-        /* для новой практической */
-        .not-wrapper{
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            z-index: 1000;
-            pointer-events: none;
-        }
-
-        .not-wrapper .notification{
-            pointer-events: auto;
-            min-width: 240px;
-            max-width: 360px;
-            background: #fff;
-            border: 2px solid #5d0013;
-            border-left: 8px solid #5d0013;
-            padding: 12px 14px;
-            border-radius: 8px;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-            display: flex;
-            gap: 10px;
-            align-items: flex-start;
-            animation: toast-in 220ms ease;
-            font-size: 14px;
-        }
-
-        .not-title{
-            font-weight: 700;
-            color:#5d0013;
-            margin-bottom: 4px;
-        }
-
-        .toast-message{
-            color: #666;
-            line-height: 1.3;
-        }
-
-        @keyframes not-in{
-            from{ transform: translateY(10px);opacity: 0;}
-            to{ transform: translateY(0);opacity: 1;}
-        }
-        @keyframes not-out{
-            from{ transform: translateY(0);opacity: 1;}
-            to{ transform: translateY(10px);opacity: 0;}
-        }
-
-        /*исчезновение*/
-        .notification.hide{
-            animation: toast-out 220ms ease forwards;
-        }
     
 .typing span{
     opacity:0;
