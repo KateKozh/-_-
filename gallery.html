@@ -8,8 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
    
     <div class="headgal">
-    <map name="strel">
-            <area shape="rect" coords="1,1,70,70" href="index.html" alt="">
+    <map name="strel" class="strelk">
+            <area shape="rect" coords="1,1,70,70" href="главная.html" alt="">
     </map>
     <img src="Снимок экрана 2025-09-29 163035.png" usemap="#strel" width="70" height="70">
    
@@ -190,10 +190,10 @@
          }
 
          
-        /* Десктопная версия */
+        
         @media (max-width: 768px) {
             .image-gallery {
-                grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
+                grid-template-columns: repeat(auto-fill,minmax(100px, 1fr));
                 grid-auto-rows: 10px;
             }
            
@@ -202,7 +202,7 @@
                
             }
             #fixedCartIcon {
-                top: 650px !important; 
+                top: 550px !important; 
             }
             .sortcont {
               display: flex;
@@ -211,36 +211,66 @@
               gap: 1px;
           }
 
-          
-        }
-
-        @media (min-width: 768px) {
+          .headgal {
+              flex-direction: column;
+              align-items: flex-start;
+              gap: 20px;
+              padding: 20px;
+          }
           
           .sortcont {
-              display: flex;
-              align-items: center;
+              flex-direction: column;
+              width: 100%;
               gap: 15px;
           }
-
+          
           .price-filter {
-              margin-left: 0;
-              flex-wrap: nowrap;
+              width: 100%;
+              flex-direction: column;
+              gap: 15px;
+          }
+          
+          .filter-inputs {
+              flex-direction: row;
+              width: 100%;
+          }
+          
+          .filter-inputs input {
+              width: 100% !important;
+          }
+    
+          .filter-buttons {
+              flex-direction: column;
+              width: 100%;
+          }
+          
+          .filter-btn {
+              width: 100%;
+              margin: 5px 0;
           }
 
-          .filter-inputs input {
-              width: 180px;
-          }
+          .headgal img[usemap="#strel"] {
+              position: fixed; 
+              top: 10px;
+              left: 10px;
+              z-index: 1000; 
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+              padding: 8px;
+          }       
 }
-          .medium {
-            
-            grid-row: span 20;
-            
-        }
-        .small {
+
+        
+
+        .medium {
             grid-row: span 15;
         }
+        .small {
+            grid-row: span 10;
+        }
         .tall {
-            grid-row: span 30;
+            grid-row: span 20;
         }
 
         .sortcont {
@@ -390,5 +420,4 @@
    
    <script src="cartscript.js"></script>
 </body>    
-
 </html>
