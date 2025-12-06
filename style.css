@@ -320,8 +320,8 @@ aside {
     justify-content: center;
     align-items: center;
     transition: all 0.5s ease;
-    flex-direction: column;
-    max-width: 400px;
+    flex-direction: row;
+    max-width: 2400px;
     margin: 0 auto;
 }
 .card1{
@@ -927,3 +927,4 @@ img {
     
 
 }
+
